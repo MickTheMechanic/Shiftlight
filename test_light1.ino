@@ -1,3 +1,5 @@
+//Shift Light V1.5
+
 #include <Adafruit_NeoPixel.h>
 
 #define PIN            6  //LED Data Pin
