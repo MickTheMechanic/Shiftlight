@@ -37,6 +37,7 @@ const uint32_t tachColor[NUMPIXELS] = {
 
 
 //Set the frequency when each LED should turn on
+//First LED turns on at minFrequency
 const unsigned int lightShiftFreq[NUMPIXELS] = {
   minFrequency,
   130,
@@ -88,11 +89,12 @@ void loop() {
 
   if (hasStartupSequenceRun == false) {
     if (igfreq > onFrequency) {
-      //start sequence
+    //run start sequence
+    //LEDs will light up, flash and light out upon starting the engine.
       for ( int i = 0; i < NUMPIXELS; ++i) {
         pixels.setPixelColor(i, tachColor[i]);
         pixels.show();
-        delay(200);
+        delay(50);
       }
       for(int a=0; a<10; a++) {
         pixels.fill(pixels.Color(0, 0, 120));
@@ -101,18 +103,27 @@ void loop() {
     	pixels.fill(pixels.Color(0, 0, 0));
     	pixels.show();
     	delay(20);
-       }  
+       } 
+       for ( int i = 0; i < NUMPIXELS; ++i) {
+        pixels.setPixelColor(i, tachColor[i]);
+        pixels.show();
+        }
+       for ( int i = NUMPIXELS-1; i >= 0; --i) {
+        pixels.setPixelColor(i, pixels.Color(0, 0, 0));
+        pixels.show();
+        delay(50);
+      }
       hasStartupSequenceRun = true;
       pixels.fill(pixels.Color(0, 0, 0));
       pixels.show();
     }
-  }
-   else if (hasStartupSequenceRun == true && igfreq < onFrequency) {
-    //re-run start sequence if engine stops but Arduino remains powered
+      if (igfreq < onFrequency) {
+    //resets hasStartupSequenceRun to false if engine stops but Arduino remains powered, 
+    //startupsequence will rerun upon restarting the engine
 	hasStartupSequenceRun = false;
     }
-
-
+  }
+	
   if (igfreq < maxFrequency) {
 
     // normal operating range
@@ -129,7 +140,7 @@ void loop() {
   else if (igfreq >= maxFrequency && igfreq < shiftFrequency) {
     //shift flash
     //default color=blue
-    //to change shift flash color, edit RGB value
+    //to change shift flash color, edit RGB value in following line
     pixels.fill(pixels.Color(0, 0, 120));
     pixels.show();
     delay(20);
@@ -141,7 +152,7 @@ void loop() {
   else if (igfreq >= shiftFrequency) {
     //overrev flash
     //default color=red
-    //to change overrev flash color, edit RGB value
+    //to change overrev flash color, edit RGB value in following line
     pixels.fill(pixels.Color(120, 0, 0));
     pixels.show();
     delay(20);
