@@ -7,9 +7,8 @@
 Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
 
 
-//Calculate the frequency of the tacho signal you are using and ajust the following values accordingly
-//example: for a standard tacho signal on a 4 cylinder engione,
-//the frequeny is equal to the RPM divided by 30
+//Calculate the frequency of the tacho signal you are using and adjust the following values accordingly
+//example: for a standard tacho signal on a 4 cylinder engine the frequeny is equal to the RPM divided by 30
 const unsigned int onFrequency = 20;  //startup sequence, value represents engine speed higher than cranking and lower than idle
 const unsigned int minFrequency = 123; // minimum frequency to begin turning on LEDs
 const unsigned int maxFrequency = 235; // maximum frequency in normal range, after this value shift flash will occur
