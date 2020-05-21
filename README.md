@@ -9,7 +9,7 @@ In this repository you will find;
 - An .stl file for a housinig for the Arduino
 - An .md file containing a detailed parts list.
 
-Currently the easiest DIY shiftlight on the world wide web, your're welcome ;)
+Currently the easiest DIY shiftlight on the world wide web, you're welcome ;)
 
 
 Notes:
