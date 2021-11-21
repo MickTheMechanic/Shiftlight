@@ -18,7 +18,11 @@ In this repository you will find;
 <img src="https://i.ibb.co/bNYJWM3/b73128e0c34c0271b41c925a6889e2ce635afe49.jpg" alt="b73128e0c34c0271b41c925a6889e2ce635afe49" border="0">
 
 <img src="https://i.ibb.co/XLvMmz7/02e61ff9bd5349ea1deae73b9c1757d51cc9f0a8.png" alt="02e61ff9bd5349ea1deae73b9c1757d51cc9f0a8" border="0">
+
+
 ## Please note, there is a mistake in this schematic. A corrected schematic is shown in issue #4
+
+
 
 <img src="https://i.ibb.co/GRdJRWB/72bc0fe16fb227eac94da071f4eaca564dbe03f3.png" alt="72bc0fe16fb227eac94da071f4eaca564dbe03f3" border="0">
 
